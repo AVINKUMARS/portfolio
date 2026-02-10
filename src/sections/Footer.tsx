@@ -5,10 +5,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Mail, href: 'mailto:avin.kumar@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/AVINKUMARS', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/avinkumar-s-499375240/', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://x.com/AVINKUM08114883', label: 'Twitter' },
+    { icon: Mail, href: 'mailto:avinkumar417@gmail.com', label: 'Email' },
   ];
 
   const quickLinks = [
@@ -43,7 +43,7 @@ const Footer = () => {
                 scrollToTop();
               }}
             >
-              AVIN<span className="text-red">.</span>
+              AVIN<span className="text-red">KUMAR</span>
             </motion.a>
             <p className="text-light-grey mb-6 max-w-sm">
               Full-stack developer passionate about creating digital experiences that make a difference.
@@ -94,7 +94,7 @@ const Footer = () => {
             <div className="space-y-3">
               <p className="text-light-grey">
                 <span className="text-white">Email:</span><br />
-                avin.kumar@example.com
+                avinkumar417@gmai.com
               </p>
               <p className="text-light-grey">
                 <span className="text-white">Location:</span><br />

@@ -81,7 +81,7 @@ const Navigation = () => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
               >
-                AVIN<span className="text-red">.</span>
+                AVIN<span className="text-red">KUMAR</span>
               </motion.a>
 
               {/* Desktop Nav Items */}

@@ -19,8 +19,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'avin.kumar@example.com',
-      href: 'mailto:avin.kumar@example.com',
+      value: 'avinkumar417@gmail.com',
+      href: 'mailto:avinkumar417@gmail.com',
     },
     {
       icon: MapPin,
@@ -31,27 +31,48 @@ const Contact = () => {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 98765 43210',
-      href: 'tel:+919876543210',
+      value: '+91 9159638728',
+      href: 'tel:+919159638728',
     },
   ];
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: 'https://github.com' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com' },
-    { icon: Twitter, label: 'Twitter', href: 'https://twitter.com' },
+    { icon: Github, label: 'GitHub', href: 'https://github.com/AVINKUMARS' },
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/avinkumar-s-499375240/' },
+    { icon: Twitter, label: 'Twitter', href: 'https://x.com/AVINKUM08114883' },
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', message: '' });
-    alert('Thank you for your message! I will get back to you soon.');
+
+    const GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbymZVKnLfQYrH8Wh17ro1OYQUb9FuUiCbHCZ2Of39KwtXF9BoaiyZc9UNE2tR-V2pmbEQ/exec';
+
+    try {
+      const response = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: 'POST',
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setFormData({ name: '', email: '', message: '' });
+        alert('✓ Thank you! Your message has been sent and saved.');
+      } else {
+        alert('Error sending message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error sending message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
