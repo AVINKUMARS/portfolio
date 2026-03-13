@@ -224,9 +224,9 @@ const Hero = () => {
             {/* Social Links */}
             <div className="flex gap-4 justify-center">
               {[
-                { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                { icon: Mail, href: 'mailto:avin@example.com', label: 'Email' },
+                { icon: Github, href: 'https://github.com/AVINKUMARS', label: 'GitHub' },
+                { icon: Linkedin, href: 'https://www.linkedin.com/in/avinkumar-s-499375240/', label: 'LinkedIn' },
+                { icon: Mail, href: 'mailto:avinkumar417@gmail.com', label: 'Email' },
               ].map((social) => (
                 <motion.a
                   key={social.label}

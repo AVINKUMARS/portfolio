@@ -318,7 +318,7 @@ const Projects = () => {
             variant="outline"
             size="lg"
             className="border-red/50 text-red hover:bg-red/10 px-8"
-            onClick={() => window.open('https://github.com', '_blank')}
+            onClick={() => window.open('https://github.com/AVINKUMARS', '_blank')}
           >
             <Github className="w-5 h-5 mr-2" />
             View All Projects on GitHub
