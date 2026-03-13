@@ -15,7 +15,7 @@ const Hero = () => {
     offset: ["start start", "end start"]
   });
   
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, -150]);
+
   const textSpacing = useTransform(scrollYProgress, [0, 1], [0, 20]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
@@ -135,11 +135,7 @@ const Hero = () => {
         { y: 0, opacity: 1, duration: 0.6 },
         '-=0.4'
       )
-      .fromTo('.hero-image',
-        { rotateY: 90, opacity: 0 },
-        { rotateY: 0, opacity: 1, duration: 1.2, ease: 'back.out(1.2)' },
-        '-=0.8'
-      )
+
       .fromTo('.hero-cta',
         { scale: 0, opacity: 0 },
         { scale: 1, opacity: 1, duration: 0.6, ease: 'elastic.out(1, 0.5)' },
@@ -176,9 +172,9 @@ const Hero = () => {
         style={{ opacity }}
         className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
       >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: Text Content */}
-          <div className="order-2 lg:order-1 text-center lg:text-left">
+        <div className="flex flex-col items-center text-center">
+          {/* Text Content */}
+          <div className="max-w-4xl mx-auto">
             {/* Name */}
             <h1 
               ref={nameRef}
@@ -186,7 +182,7 @@ const Hero = () => {
             >
               <motion.span 
                 style={{ letterSpacing: textSpacing }}
-                className="inline-flex flex-wrap justify-center lg:justify-start"
+                className="inline-flex flex-wrap justify-center"
               >
                 {nameChars.map((char, i) => (
                   <span key={i} className="hero-name-char inline-block">
@@ -202,12 +198,12 @@ const Hero = () => {
             </p>
             
             {/* Tagline */}
-            <p className="hero-tagline text-lg sm:text-xl text-light-grey max-w-xl mx-auto lg:mx-0 mb-8">
+            <p className="hero-tagline text-lg sm:text-xl text-light-grey max-w-xl mx-auto mb-8">
               I BUILD DIGITAL EXPERIENCES THAT MATTER.
             </p>
             
             {/* CTA Buttons */}
-            <div className="hero-cta flex flex-wrap gap-4 justify-center lg:justify-start mb-12">
+            <div className="hero-cta flex flex-wrap gap-4 justify-center mb-12">
               <Button 
                 size="lg"
                 className="bg-red hover:bg-red/90 text-white px-8 py-6 text-lg font-medium tracking-wider transition-all duration-300 hover:shadow-glow-lg hover:scale-105"
@@ -226,7 +222,7 @@ const Hero = () => {
             </div>
             
             {/* Social Links */}
-            <div className="flex gap-4 justify-center lg:justify-start">
+            <div className="flex gap-4 justify-center">
               {[
                 { icon: Github, href: 'https://github.com', label: 'GitHub' },
                 { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
@@ -247,39 +243,6 @@ const Hero = () => {
               ))}
             </div>
           </div>
-          
-          {/* Right: Profile Image */}
-          <motion.div 
-            style={{ y: imageY }}
-            className="order-1 lg:order-2 flex justify-center"
-          >
-            <div className="hero-image relative">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-red/20 blur-[100px] rounded-full scale-75" />
-              
-              {/* Image Container */}
-              <motion.div 
-                className="relative w-64 h-80 sm:w-80 sm:h-96 lg:w-96 lg:h-[480px]"
-                animate={{ scale: [1, 1.02, 1] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <img 
-                  src="/hero-profile.png" 
-                  alt="Avin Kumar S"
-                  className="w-full h-full object-contain object-center"
-                />
-              </motion.div>
-              
-              {/* Floating Badge */}
-              <motion.div 
-                className="absolute -bottom-4 -right-4 glass px-4 py-2 rounded-full"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <span className="text-sm font-medium text-white">2+ Years Exp.</span>
-              </motion.div>
-            </div>
-          </motion.div>
         </div>
       </motion.div>
       
