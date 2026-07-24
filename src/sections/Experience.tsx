@@ -23,7 +23,7 @@ const Experience = () => {
     {
       role: 'Full Stack Developer',
       company: 'ScalingWolf AI',
-      location: 'Remote',
+      location: 'On-site',
       period: '2025 - Present',
       description: [
         'Leading development of AI-powered SaaS products using React and Go',
